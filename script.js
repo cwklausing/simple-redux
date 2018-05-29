@@ -29,10 +29,12 @@ const number = document.getElementById('number');
 
 incrementButton.addEventListener('click', () => {
   store.dispatch(INCREMENT);
-  number.innerText = store.getState();
 });
 
 decrementButton.addEventListener('click', () => {
   store.dispatch(DECREMENT);
+});
+
+store.subscribe(() => {
   number.innerText = store.getState();
 });
